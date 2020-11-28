@@ -1,0 +1,42 @@
+
+ 
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+<div class="body">
+
+  <div class="container">
+
+    {% if form.errors %}
+    <p> Password or Username is incorrect </p>
+    {% endif %}
+
+    <div class="card container" style="width: 20rem; margin-top:70px;">
+
+      <div class="card-body">
+        <h3 class="text-center" style="font-family: 'Lobster Two', cursive;">Awards</h3>
+      </div>
+
+      <form action="/accounts/login/" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form%}
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary btn-sm" value="Login">
+        </div>
+
+        <hr>
+        <p class="container">you dont have an account? <a href="/accounts/register/"> Sign Up</a></p>
+    </div>
+
+
+    <!-- </div> -->
+
+    <input type="hidden" name="next" value="{{next}}">
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
