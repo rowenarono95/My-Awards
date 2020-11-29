@@ -17,10 +17,10 @@ class Migration(migrations.Migration):
             name='Project',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.TextField(max_length=30)),
+                ('title', models.TextField(max_length=255)),
                 ('image', models.ImageField(blank=True, upload_to='home/')),
                 ('link', models.URLField()),
-                ('description', models.TextField(max_length=300)),
+                ('description', models.TextField(max_length=255)),
                 ('date_craeted', models.DateField(auto_now_add=True)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
