@@ -19,8 +19,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # # path('',include('myawwards.urls')),
-    # path('accounts/', include('registration.backends.simple.urls')),
+    path('',include('myawwards.urls')),
+    path('accounts/', include('django_registration.backends.one_step.urls')),
     path('logout/', auth_views.LogoutView.as_view()),
 ]
 

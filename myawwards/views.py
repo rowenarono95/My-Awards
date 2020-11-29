@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from .forms import Project, UserUpdateForm, ProfileUpdateForm, SignUpForm
-from .models import Profile, Project
+from .forms import  UserUpdateForm, ProfileUpdateForm, SignUpForm
+from .models import Profile
 
 # Create your views here.
 
