@@ -2,11 +2,15 @@
 {% load ratings %}
 {%block content%}
 <div class="container">
-    {%for project in projects %}
-<h1>{{project.title}}</h1>
-<img src="{{project.image.url}}" class="img-fluid" alt="">
-{% ratings project %}
-{% endfor %}
+<h1>{{projects.title}}</h1>
+<img src="{{projects.image.url}}" class="img-fluid" alt="">
 
 </div>
+<br>
+<br>
+<br>
+<div class="" style="margin-left: 22rem;">
+    {% ratings projects %}
+</div>
+
 {%endblock%}

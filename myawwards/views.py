@@ -13,8 +13,8 @@ def home(request):
     projects= Project.objects.all()
     return render(request,'index.html',{"projects":projects})
 
-def my_projects(request):
-    projects= Project.objects.all()
+def my_projects(request,id):
+    projects= Project.objects.get(id = id)
     return render(request,'my_projects.html',{"projects":projects})
         
     
@@ -28,7 +28,6 @@ def register(request):
             profile=procForm.save(commit=False)
             profile.user=user
             profile.save()
-            # messages.success(request, f'Successfully created Account!.You can now login as {username}!')
         return redirect('login')
     else:
         form= RegistrationForm()

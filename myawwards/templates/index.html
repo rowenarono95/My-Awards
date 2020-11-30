@@ -5,7 +5,7 @@
 
         <!-- Jumbotron -->
         <div class="card card-image"
-            style="background-image: url(https://images.unsplash.com/photo-1524387971136-0329ee358d44?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1668&q=80); width: 1000mvh; height: 700mvh;">
+            style="background-image: url(https://images.unsplash.com/photo-1524387971136-0329ee358d44?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1668&q=80);background-position: center;background-size: cover;background-repeat: no-repeat; width: 1000mvh; height: 700mvh;">
             <div class="text-white text-center rgba-stylish-strong py-5 px-4">
                 <div class="py-5">
 
@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <h5 class=""> <strong>Description</strong>: {{project.description}}</h5>
                             
-                        <a href="{% url 'my_projects' %}">Go to ratings</a>
+                        <a href="my_projects/{{project.id}}">Go to ratings</a>
                         <!-- <a href="{{project.link}}">Readmore</a> -->
                     </div>
                 </div>
