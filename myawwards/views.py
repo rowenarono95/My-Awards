@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from .forms import  UserUpdateForm, ProfileUpdateForm, SignUpForm
+from .forms import  UserUpdateForm, ProfileUpdateForm, SignUpForm,RegistrationForm,profileForm,NewProjectForm
 from .models import Profile,Project
 
 # Create your views here.
@@ -14,22 +14,26 @@ def home(request):
     return render(request,'index.html')
         
     
-
-
 def register(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('home')
+    if request.method=="POST":
+        form=RegistrationForm(request.POST)
+        procForm=profileForm(request.POST, request.FILES)
+        if form.is_valid() and procForm.is_valid():
+            username=form.cleaned_data.get('username')
+            user=form.save()
+            profile=procForm.save(commit=False)
+            profile.user=user
+            profile.save()
+            # messages.success(request, f'Successfully created Account!.You can now login as {username}!')
+        return redirect('login')
     else:
-        form = SignUpForm()
-    return render(request, 'registration/registration_form.html', {'form': form})
-
+        form= RegistrationForm()
+        prof=profileForm()
+    params={
+        'form':form,
+        'profForm': prof
+    }
+    return render(request, 'users/register.html', params)
 
 
 @login_required(login_url='/accounts/login/')
@@ -65,3 +69,20 @@ def search_results(request):
         message = "You haven't searched for any term"
 
         return render(request,'search.html',{'message':message})
+
+
+@login_required(login_url='/accounts/login/')   
+def new_project(request):
+    current_user = request.user
+    user_profile = Profile.objects.get(user = current_user)
+    if request.method == 'POST':
+        form = NewProjectForm(request.POST,request.FILES)
+        if form.is_valid:
+            project_new = form.save(commit = False)
+            project_new.user = user_profile
+            project_new.save()
+        return redirect('home')  
+    else:
+        form = NewProjectForm()
+    return render(request,'new_project.html',{'form':form})
+
