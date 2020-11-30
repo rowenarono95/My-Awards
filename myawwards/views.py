@@ -12,6 +12,10 @@ from .models import Profile,Project
 def home(request):
     projects= Project.objects.all()
     return render(request,'index.html',{"projects":projects})
+
+def my_projects(request):
+    projects= Project.objects.all()
+    return render(request,'my_projects.html',{"projects":projects})
         
     
 def register(request):

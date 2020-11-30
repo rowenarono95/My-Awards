@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +20,11 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_user">
         <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
       </form>
-      <a href="#"><i class="far fa-user-circle"
+      <a href="{% url 'profile' %}"><i class="far fa-user-circle"
           style="font-size: 30px; margin-left: 210px; color: black;">Profile</i></a>
+    </div>
+    <div class="" style="margin-right: 1rem;">
+      <a href="{% url 'my_projects' %}">My Project</a>
     </div>
     <div>
       <a href="{% url 'new_project' %}">New Post</a>

@@ -23,8 +23,17 @@ class Profile(models.Model):
 class Project(models.Model):
     title = models.TextField(max_length=30)
     image = CloudinaryField('image')
-    # image = models.ImageField(upload_to = 'home/', blank=True)
     link= models.URLField(max_length=200)
     description = models.TextField(max_length=300)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE,)
     date_craeted= models.DateField(auto_now_add=True) 
+
+
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        projects = cls.objects.filter(title__icontains=search_term)
+        return projects
+
+    def __str__(self):
+        return self.title

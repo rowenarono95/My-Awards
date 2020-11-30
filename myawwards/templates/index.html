@@ -3,48 +3,46 @@
     {%block content%}
     <div class="container-fluid">
 
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h2 class="display-4">Fluid jumbotron</h2>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
-                </p>
+        <!-- Jumbotron -->
+        <div class="card card-image"
+            style="background-image: url(https://images.unsplash.com/photo-1524387971136-0329ee358d44?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1668&q=80); width: 1000mvh; height: 700mvh;">
+            <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+                <div class="py-5">
+
+                    <!-- Content -->
+                    <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>
+                    <h2 class="card-title h2 my-4 py-2">Jumbotron with image overlay</h2>
+                    <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui
+                        quidem minima debitis perferendis vitae cumque et quo impedit.</p>
+                    <a class="btn peach-gradient"><i class="fas fa-clone left"></i> View project</a>
+
+                </div>
             </div>
         </div>
         <!-- Jumbotron -->
-<div class="card card-image" style="background-image: url(https://images.unsplash.com/photo-1524387971136-0329ee358d44?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1668&q=80); width: 1000mvh; height: 500mvh;">
-    <div class="text-white text-center rgba-stylish-strong py-5 px-4">
-      <div class="py-5">
-  
-        <!-- Content -->
-        <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>
-        <h2 class="card-title h2 my-4 py-2">Jumbotron with image overlay</h2>
-        <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p>
-        <a class="btn peach-gradient"><i class="fas fa-clone left"></i> View project</a>
-  
-      </div>
-    </div>
-  </div>
-  <!-- Jumbotron -->
         <h3>Sample Projects</h3>
         <div class="row">
-            {%for proj in projects%}
+            {%for project in projects%}
             <div class="col-md-3">
                 <div class="card">
                     <div class="view view-cascade overlay">
-                        <img src="{{proj.image.url}}" class="img-fluid" alt="">
-                        <a href="projects/{{proj.id}}">
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
+                        <img src="{{project.image.url}}" class="img-fluid" alt="">
+                        <br>
+                        <br>
+                        <h5>{{project.title}}</h5>
                     </div>
                     <div class="card-body">
-                        <h5 class="">project description:{{proj.description}}</h5>
-                        <a href="{{proj.link}}">Readmore</a>
+                        <h5 class=""> <strong>Description</strong>: {{project.description}}</h5>
+                            
+                        <a href="{% url 'my_projects' %}">Go to ratings</a>
+                        <!-- <a href="{{project.link}}">Readmore</a> -->
                     </div>
                 </div>
             </div>
             {%endfor%}
         </div>
     </div>
-{{user.username}}
+    {{user.username}}
     {%endblock%}
 </div>
