@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'myawwards',
     'bootstrap4',
     'django_registration',
+    'star_ratings',
     
 ]
 

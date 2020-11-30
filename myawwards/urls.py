@@ -13,6 +13,7 @@ urlpatterns = [
     path('profile/', views.profile,name = 'profile'),
     path('new_project/', views.new_project,name ='new_project'),
     path('my_projects/', views.my_projects,name ='my_projects'),
+    path('ratings/', include('star_ratings.urls', namespace='ratings')),
     
 ]
 
