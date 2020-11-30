@@ -29,13 +29,12 @@
                     <div class="card-body">
 
                         <a href="{{project.link}}">view site</a>
-
-                        <p class="card-text">project description:{{project.description}}</p>
+                        <h4 class="card-text">{{project.title}}</h4>
+                        <p class="card-text">{{project.description}}</p>
 
                         <hr>
-                        <span> <img style="border-radius: 50%; width:30px; height:30px; " src="{{project.avatar }}"
-                                alt="image">By
-                            <b>{{project.author}}</b></span>
+                        <span> By
+                            <b>{{user.username}}</b></span>
 
                         <p class="card-meta float-right">{{project.date_craeted}}</p>
                     </div>

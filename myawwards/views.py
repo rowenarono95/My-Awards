@@ -62,8 +62,8 @@ def profile(request):
 
 
 def search_results(request):
-    if 'project' in request.GET and request.GET['project']:
-        search_term =request.GET.get('project')
+    if 'search_user' in request.GET and request.GET['search_user']:
+        search_term =request.GET.get('search_user')
         searched_project = Project.search_by_title(search_term)
         message = f'{search_term}'
 
