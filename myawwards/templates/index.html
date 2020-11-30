@@ -25,16 +25,23 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="view view-cascade overlay">
-                        <img src="{{project.image.url}}" class="img-fluid" alt="">
+                        <a href="my_projects/{{project.id}}"><img src="{{project.image.url}}" class="img-fluid" alt=""></a>
                         <br>
                         <br>
                         <h5>{{project.title}}</h5>
                     </div>
                     <div class="card-body">
                         <h5 class=""> <strong>Description</strong>: {{project.description}}</h5>
-                            
-                        <a href="my_projects/{{project.id}}">Go to ratings</a>
-                        <!-- <a href="{{project.link}}">Readmore</a> -->
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <a href="my_projects/{{project.id}}">Go to ratings</a>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="{{project.link}}">Live link</a>
+                                </div>
+                            </div>
+                       
+                       
                     </div>
                 </div>
             </div>
