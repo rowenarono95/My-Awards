@@ -16,20 +16,20 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="view view-cascade overlay">
-                        <img src="{{proj.projectscreenshot.url}}" class="img-fluid" alt="">
+                        <img src="{{proj.image.url}}" class="img-fluid" alt="">
                         <a href="projects/{{proj.id}}">
                             <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
                     <div class="card-body">
-                        <h5 class="">{{proj.title}}</h5>
-                        <a href="projects/{{proj.id}}">Readmore</a>
+                        <h5 class="">project description:{{project.description}}</h5>
+                        <a href="{{proj.link}}">Readmore</a>
                     </div>
                 </div>
             </div>
             {%endfor%}
         </div>
     </div>
-
+{{user.username}}
     {%endblock%}
 </div>
