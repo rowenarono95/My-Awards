@@ -10,6 +10,21 @@
                 </p>
             </div>
         </div>
+        <!-- Jumbotron -->
+<div class="card card-image" style="background-image: url(https://images.unsplash.com/photo-1524387971136-0329ee358d44?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1668&q=80); width: 1000mvh; height: 500mvh;">
+    <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+      <div class="py-5">
+  
+        <!-- Content -->
+        <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>
+        <h2 class="card-title h2 my-4 py-2">Jumbotron with image overlay</h2>
+        <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p>
+        <a class="btn peach-gradient"><i class="fas fa-clone left"></i> View project</a>
+  
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
         <h3>Sample Projects</h3>
         <div class="row">
             {%for proj in projects%}
@@ -22,7 +37,7 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <h5 class="">project description:{{project.description}}</h5>
+                        <h5 class="">project description:{{proj.description}}</h5>
                         <a href="{{proj.link}}">Readmore</a>
                     </div>
                 </div>

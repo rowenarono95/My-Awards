@@ -10,8 +10,8 @@ from .models import Profile,Project
 
 @login_required(login_url='/accounts/login/')
 def home(request):
-    project= Project.objects.all()
-    return render(request,'index.html')
+    projects= Project.objects.all()
+    return render(request,'index.html',{"projects":projects})
         
     
 def register(request):
